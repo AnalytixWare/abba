@@ -1,6 +1,11 @@
-# Automatic Binary Binning Algorithm (abba)
-# for this to work you need include the focus functions and the info loss functions
 
+#' Automatic Binary Binning Algorithm (abba) for this to work you need include
+#' the focus functions and the info loss functions
+#' Takes in an abba.bin object and performs a binning
+#' 
+#' @param abbabin The abbabin object to bin
+#' @return An abbabin object binned
+#' @export 
 abba = function(abbabin,
         infoloss_fn 	= abba.pearson.loss,
         focus_fn    	= abba.trendup_pearson_min_pop_bad_min_woe_diff_max_num_bins_focus,

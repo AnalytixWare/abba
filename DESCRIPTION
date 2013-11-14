@@ -1,0 +1,22 @@
+Package: ABBA
+Type: Package
+Title: Automatic Binary Binning Algorithm (ABBA)
+Version: 1.0
+Date: 2013-11-15
+Author: Dai Zhuo Jia <dzj@analytixware.com>
+Maintainer: ZJ <dzj@analytixware.com>
+Description: Automatic Binary Binning Algorithm (ABBA)
+License: GPL
+Collate:
+    'abba.bin.r'
+    'abba.breakup_bins.r'
+    'abba.collapse_zero_bads_or_goods_bins.r'
+    'abba.identify_orig_bin_pos.r'
+    'abba.merge_bins.r'
+    'abba.pearson_reduce.r'
+    'abba.r'
+    'abba.redistribute.r'
+    'as.data.frame.abba.bin.r'
+    'permute.r'
+    'focus_functions.r'
+    'info_loss_functions.r'

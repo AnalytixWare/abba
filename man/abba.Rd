@@ -1,0 +1,25 @@
+\name{abba}
+\alias{abba}
+\title{Automatic Binary Binning Algorithm (abba) for this to work you need include
+the focus functions and the info loss functions
+Takes in an abba.bin object and performs a binning}
+\usage{
+  abba(abbabin, infoloss_fn = abba.pearson.loss,
+    focus_fn = abba.trendup_pearson_min_pop_bad_min_woe_diff_max_num_bins_focus,
+    maxiter = Inf, verbose = FALSE, tryoptimise = FALSE,
+    collapseZeroes = TRUE, ordered = TRUE, greedier = TRUE,
+    ...)
+}
+\arguments{
+  \item{abbabin}{The abbabin object to bin}
+}
+\value{
+  An abbabin object binned
+}
+\description{
+  Automatic Binary Binning Algorithm (abba) for this to
+  work you need include the focus functions and the info
+  loss functions Takes in an abba.bin object and performs a
+  binning
+}
+
