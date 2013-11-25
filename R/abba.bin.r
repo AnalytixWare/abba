@@ -1,4 +1,3 @@
-
 # creates an abba.bin object
 # the abba.bin class is a list with following characteristics
 #	bin 		- 	the bin labels
