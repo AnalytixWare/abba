@@ -3,7 +3,7 @@
 #################
 
 *.csv
-
+.Rhistory
 *.pydevproject
 .project
 .metadata
