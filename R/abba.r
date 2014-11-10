@@ -6,6 +6,7 @@
 #' @param abbabin The abbabin object to bin
 #' @return An abbabin object binned
 #' @export 
+
 abba <- function(abbabin,
         infoloss_fn 	= abba.pearson.loss,
         focus_fn    	= abba.trendup_pearson_min_pop_bad_min_woe_diff_max_num_bins_focus,
