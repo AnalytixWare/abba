@@ -19,7 +19,7 @@ factor.bins <- function(bin, b, g, origbin = NULL, singular = rep(TRUE, 1, lengt
   if (length(uq) != 1) 
     stop("Error: The length of bins, bad counts, good counts, or singular vector don't match")
   
-  abbabin <- list(bin = bin, b = b, g = g, origbin = origbin, 
+  bins <- list(bin = bin, b = b, g = g, origbin = origbin, 
                   singular = singular)
   
   attr(abbabin, "class") <- "factor.bins"

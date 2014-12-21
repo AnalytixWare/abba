@@ -19,7 +19,7 @@ numeric.bins <- function(bin, b, g, bin.rules, origbin = NULL, singular = rep(TR
   if (length(uq) != 1) 
     stop("Error: The length of bins, bad counts, good counts, or singular vector don't match")
   
-  abbabin <- list(bin = bin, b = b, g = g, origbin = origbin, 
+  bins <- list(bin = bin, b = b, g = g, origbin = origbin, 
                   singular = singular)
   
   attr(abbabin, "class") <- "numeric.bins"
