@@ -1,3 +1,4 @@
+#' @export
 abba.merge_bins = function(bin, b, g, bin1_pos, bin2_pos, allow_intersect = F, 
     verbose = F, ...) {
     if (length(intersect(bin1_pos, bin2_pos)) > 0) {

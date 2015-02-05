@@ -1,3 +1,4 @@
+#' @export
 abba.redistribute_all = function(abbabin, verbose = F, ...) {
     redis_at_least_one = F
     l = length(abbabin$b) - 1
@@ -19,6 +20,7 @@ abba.redistribute_all = function(abbabin, verbose = F, ...) {
     } else return(NULL)
 }
 
+#' @export
 abba.redistribute = function(abbabin, pos, infoloss_fn = abba.pearson.loss, 
     focus_fn = abba.trendup_pearson_min_pop_bad_focus, verbose = F, 
     ...) {

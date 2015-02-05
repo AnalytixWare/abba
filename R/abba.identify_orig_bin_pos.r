@@ -1,3 +1,4 @@
+#' @export
 abba.identify_orig_bin_pos = function(abbabin, pos) {
     # given the position of a cut point (pos), this function will
     # return begin positions and end positions in the original

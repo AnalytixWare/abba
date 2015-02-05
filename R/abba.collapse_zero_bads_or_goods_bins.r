@@ -1,3 +1,4 @@
+#' @export
 # expects the abbabin to be an abba.bin object
 abba.collapse_zero_bads_or_goods_bins = function(abbabin, ...) {
     # where do the zero counts lie
