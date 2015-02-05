@@ -1,14 +1,14 @@
-# creates an abba.bin object the abba.bin class is a list with
-# following characteristics bin - the bin labels b - the
-# number of bads in the bin g - the number of goods in the bin
-# origbin - a list that contains bin, b, and g that represents
-# the original unmerged bins singular - used to represent if
-# the the bin a singular or not; singular =TRUE means that the
-# bin has never been combined with another bin
+#' Creates an abba.bin object the abba.bin class is a list with following characteristics 
+#' 
+#' @param bin The bin labels
+#' @param origbin The original unmerged bins 
+#' @param b Number of bads in the bin
+#' @param g Number of goods in the bin
+#' @param singular Used to represent if the bin a singular or not; singular =
+#'   TRUE means that the bin has never been combined with another bin
+#' @export
 
-
-abba.bin = function(bin, b, g, origbin = NULL, singular = rep(TRUE, 
-    1, length(bin)), ...) {
+abba.bin = function(bin, b, g, origbin = NULL, singular = rep(TRUE, 1, length(bin)), ...) {
     if (is.null(origbin)) 
         origbin = list(bin = bin, b = b, g = g)
     

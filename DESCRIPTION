@@ -1,11 +1,11 @@
-Package: ABBA
+Package: abba
 Type: Package
-Title: Automatic Binary Binning Algorithm (ABBA)
+Title: Automatic Binary Binning Algorithm (abba)
 Version: 1.0
 Date: 2013-11-15
 Author: Dai Zhuo Jia <dzj@analytixware.com>
 Maintainer: ZJ <dzj@analytixware.com>
-Description: Automatic Binary Binning Algorithm (ABBA)
+Description: Automatic Binary Binning Algorithm (abba)
 License: GPL
 Collate:
     'abba.bin.r'
