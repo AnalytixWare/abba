@@ -4,7 +4,7 @@ abba.redistribute_all = function(abbabin, verbose = F, ...) {
     l = length(abbabin$b) - 1
     if (l == 0) 
         return(abbabin)
-    random_index = permute(1:l)
+    random_index = sample(1:l)
     for (i in random_index) {
         res = abba.redistribute(abbabin, i, ...)
         if (!is.null(res)) {

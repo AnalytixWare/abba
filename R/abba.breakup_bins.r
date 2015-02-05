@@ -1,9 +1,9 @@
 #' @export
  
-sourabba.breakup_all_bins = function(abbabin, ...) {
+abba.breakup_all_bins = function(abbabin, ...) {
     l = length(abbabin$bin)
     done_at_least_one = F
-    random_index = permute(1:l)
+    random_index = sample(1:l)
     i = 1
     while (!done_at_least_one && i <= l) {
         tmp = abba.breakup_bins(abbabin, random_index[i], ...)
@@ -41,7 +41,7 @@ abba.breakup_bins = function(abbabin, pos, focus_fn = abba.trendup_pearson_min_p
         # stop('This is a singular bin. Check for logical errors')
     }
     
-    random_index = permute(origpos[1]:(origpos[2] - 1))
+    random_index = sample(origpos[1]:(origpos[2] - 1))
     for (i in random_index) {
         new_b1 = sum(a$origbin$b[origpos[1]:i])
         new_b2 = sum(a$origbin$b[(i + 1):origpos[2]])
