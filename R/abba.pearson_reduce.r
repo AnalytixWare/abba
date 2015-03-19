@@ -1,4 +1,4 @@
-
+#' @export
 abba.pearson_reduce = function(abbabin, signif = 0.5, start = 1) {
     a = abbabin
     singular = a$singular

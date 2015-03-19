@@ -1,4 +1,5 @@
-sourabba.breakup_all_bins = function(abbabin, ...) {
+#' @export
+abba.breakup_all_bins = function(abbabin, ...) {
     l = length(abbabin$bin)
     done_at_least_one = F
     random_index = permute(1:l)
@@ -19,6 +20,7 @@ sourabba.breakup_all_bins = function(abbabin, ...) {
     } else return(NULL)
 }
 
+#' @export
 abba.breakup_bins = function(abbabin, pos, focus_fn = abba.trendup_pearson_min_pop_bad_focus, 
     verbose = F, ...) {
     

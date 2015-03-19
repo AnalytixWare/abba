@@ -1,4 +1,4 @@
-Package: ABBA
+Package: abba
 Type: Package
 Title: Automatic Binary Binning Algorithm (ABBA)
 Version: 1.0

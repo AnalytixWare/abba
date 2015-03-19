@@ -1,3 +1,4 @@
+#' @export
 abba.redistribute_all = function(abbabin, verbose = F, ...) {
     redis_at_least_one = F
     l = length(abbabin$b) - 1

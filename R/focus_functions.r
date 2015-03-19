@@ -1,11 +1,12 @@
 # limits the number of bins
+#' @export
 abba.max_num_bins_focus = function(abbabin, max_num_bins = 20, 
     ...) {
     if (length(abbabin$b) > max_num_bins) {
         return(seq(1, length(abbabin$b) - 1))
     } else return(NULL)
 }
-
+#' @export
 abba.trendup_focus = function(abbabin, trendup = T, ...) {
     if (trendup) 
         c = which(diff(abbabin$b/abbabin$g) < 0) else if (!trendup) 
@@ -15,7 +16,7 @@ abba.trendup_focus = function(abbabin, trendup = T, ...) {
 
 # returns an index that tells the algorithm where to focus its
 # efforts
-
+#' @export
 abba.turning_pt_pearson_min_pop_bad_focus = function(abbabin, 
     signif, min_pop, min_bad, ...) {
     # print(length(abbabin$bin))
@@ -39,13 +40,13 @@ abba.turning_pt_pearson_min_pop_bad_focus = function(abbabin,
         return(NULL)
     } else return(1:(length(abbabin$bin) - 1))
 }
-
+#' @export
 abba.turning_pt_pearson_min_pop_bad_min_woe_diff_focus = function(...) {
     a = abba.turning_pt_pearson_min_pop_bad_focus(...)
     b = abba.min_woe_diff_focus(...)
     return(unique(union(a, b)))
 }
-
+#' @export
 abba.turning_pt_pearson_min_pop_bad_min_woe_diff_max_num_bins_focus = function(...) {
     a = abba.turning_pt_pearson_min_pop_bad_focus(...)
     b = abba.min_woe_diff_focus(...)
@@ -57,7 +58,7 @@ abba.turning_pt_pearson_min_pop_bad_min_woe_diff_max_num_bins_focus = function(.
         return(r)
     }
 }
-
+#' @export
 abba.min_bad_focus = function(abbabin, min_bad = sum(abbabin$b)/20, 
     ...) {
     # if a proportion is passed convert that proportion to actual
@@ -77,7 +78,7 @@ abba.min_bad_focus = function(abbabin, min_bad = sum(abbabin$b)/20,
     return(unique(a))
 }
 
-
+#' @export
 abba.min_pop_focus = function(abbabin, min_pop = sum(abbabin$b + 
     abbabin$g)/20, ...) {
     if (min_pop < 1) {
@@ -94,14 +95,14 @@ abba.min_pop_focus = function(abbabin, min_pop = sum(abbabin$b +
     
     return(unique(a))
 }
-
+#' @export
 abba.min_pop_bad_focus = function(abbabin, min_pop = sum(abbabin$b + 
     abbabin$g)/20, min_bad = sum(abbabin$b)/20, ...) {
     a = abba.min_pop_focus(abbabin, min_pop)
     b = abba.min_bad_focus(abbabin, min_bad)
     return(intersect(a, b))
 }
-
+#' @export
 abba.pearson_focus = function(abbabin, signif = 0.5, ...) {
     # every two bin must be have a p-value of at least signif
     # (default is 0.5) so that they judged to be sufficiently
@@ -124,14 +125,14 @@ abba.pearson_focus = function(abbabin, signif = 0.5, ...) {
     which(statistics <= q)
     # which(abs(diff(abbabin$b/abbabin$g))<(2^(0.15)-1)/60)
 }
-
+#' @export
 abba.pearson_trendup_focus = function(abbabin, signif = 0.5, trendup = T, 
     ...) {
     a = abba.pearson_focus(abbabin, signif = signif, ...)
     b = abba.trendup_focus(abbabin, trendup = trendup, ...)
     return(union(a, b))
 }
-
+#' @export
 abba.pearson_min_pop_bad_focus = function(abbabin, signif = 0.5, 
     min_pop = sum(abbabin$b + abbabin$g)/20, min_bad = sum(abbabin$b)/20, 
     ...) {
@@ -141,13 +142,13 @@ abba.pearson_min_pop_bad_focus = function(abbabin, signif = 0.5,
     # print(signif)
     return(unique(union(a, b)))
 }
-
+#' @export
 abba.pearson_min_pop_bad_min_woe_diff_focus = function(...) {
     a = abba.pearson_min_pop_bad_focus(...)
     b = abba.min_woe_diff_focus(...)
     return(unique(union(a, b)))
 }
-
+#' @export
 abba.min_woe_diff_focus = function(abbabin, min_woe_diff = 0, 
     ...) {
     # calculate the weight of evidence
@@ -158,14 +159,14 @@ abba.min_woe_diff_focus = function(abbabin, min_woe_diff = 0,
     # less than the minimum
     return(which(woe_diff < min_woe_diff))
 }
-
+#' @export
 abba.trendup_pearson_min_pop_bad_focus = function(...) {
     a = abba.min_pop_bad_focus(...)
     b = abba.pearson_focus(...)
     c = abba.trendup_focus(...)
     return(unique(union(union(a, b), c)))
 }
-
+#' @export
 abba.trendup_pearson_min_pop_bad_min_woe_diff_max_num_bins_focus = function(...) {
     a = abba.trendup_pearson_min_pop_bad_focus(...)
     b = abba.min_woe_diff_focus(...)
@@ -180,7 +181,7 @@ abba.trendup_pearson_min_pop_bad_min_woe_diff_max_num_bins_focus = function(...)
     }
 }
 
-
+#' @export
 abba.trendup_min_bad_focus = function(abbabin, min_bad = sum(abbabin$b)/20, 
     trendup = T, ...) {
     a = abba.min_bad_focus(abbabin, min_bad)
@@ -190,7 +191,7 @@ abba.trendup_min_bad_focus = function(abbabin, min_bad = sum(abbabin$b)/20,
         c = which(diff(abbabin$b/abbabin$g) > 0)
     return(union(a, c))
 }
-
+#' @export
 abba.trendup_min_pop_focus = function(abbabin, min_pop = sum(abbabin$b + 
     abbabin$g)/20, trendup = T, ...) {
     a = abba.min_bad_focus(abbabin, min_pop)
@@ -199,7 +200,7 @@ abba.trendup_min_pop_focus = function(abbabin, min_pop = sum(abbabin$b +
         c = which(diff(abbabin$b/abbabin$g) > 0)
     return(union(a, c))
 }
-
+#' @export
 abba.trendup_min_pop_bad_focus = function(abbabin, min_bad = sum(abbabin$b)/20, 
     min_pop = sum(abbabin$b + abbabin$g)/20, trendup = T, ...) {
     a = abba.min_bad_focus(abbabin, min_bad)
